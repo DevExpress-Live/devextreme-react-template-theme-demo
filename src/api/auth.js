@@ -3,7 +3,7 @@ import defaultUser from '../utils/default-user';
 export async function signIn(email, password) {
   try {
     // Send request
-    const response = await fetch('http://172.22.5.80:8000/api/login', {
+    const response = await fetch('http://URL/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
@@ -22,9 +22,10 @@ export async function signIn(email, password) {
       data: user
     };
   } catch {
+    // to add auth requirement modify the return statement below
     return {
-      isOk: false,
-      message: "Authentication failed"
+      isOk: true,
+      data: defaultUser
     };
   }
 }
@@ -38,7 +39,7 @@ export async function getUser() {
       };
     } else {
       const id = localStorage.getItem('id');
-      const response = await fetch(`http://172.22.5.80:8000/api/users/${id}`, {
+      const response = await fetch(`URL/api/users/${id}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -53,8 +54,10 @@ export async function getUser() {
       };
     }
   } catch {
+    // to add auth requirement modify the return statement below
     return {
-      isOk: false
+      isOk: true,
+      data: defaultUser
     };
   }
 }
