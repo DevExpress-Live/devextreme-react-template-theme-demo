@@ -13,6 +13,8 @@ Themes and icons should be added to [public](react/public) folder. Themes should
 
 In this repo, authentication is disabled. To add authentication functionality watch the December 13, 2023 live stream [here](https://www.youtube.com/watch?v=2epO6jGLTAE&ab_channel=DevExpress).
 
+To log in, any combination of email and password will work.
+
 
 # Getting Started 
 
